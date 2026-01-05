@@ -2,7 +2,42 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchCategories } from '../services/api';
 import { Loader } from '../components/common/Loader';
-import { Tags } from 'lucide-react';
+import { 
+  Tags, Smartphone, Laptop, Watch, Shirt, ShoppingBag, 
+  Home, Car, Bike, Sparkles, Gem, Utensils, 
+  Dumbbell, Sun, Tablet, Palette, ShoppingBasket, SprayCan 
+} from 'lucide-react';
+
+const getCategoryIcon = (slug) => {
+  const icons = {
+    'beauty': Sparkles,
+    'fragrances': SprayCan,
+    'furniture': Home,
+    'groceries': ShoppingBasket,
+    'home-decoration': Palette,
+    'kitchen-accessories': Utensils,
+    'laptops': Laptop,
+    'mens-shirts': Shirt,
+    'mens-shoes': ShoppingBag,
+    'mens-watches': Watch,
+    'mobile-accessories': Smartphone,
+    'motorcycles': Bike,
+    'skin-care': Sparkles,
+    'smartphones': Smartphone,
+    'sports-accessories': Dumbbell,
+    'sunglasses': Sun,
+    'tablets': Tablet,
+    'tops': Shirt,
+    'vehicle': Car,
+    'womens-bags': ShoppingBag,
+    'womens-dresses': Shirt,
+    'womens-jewellery': Gem,
+    'womens-shoes': ShoppingBag,
+    'womens-watches': Watch,
+  };
+
+  return icons[slug] || Tags;
+};
 
 const CategoryOverview = () => {
   const [categories, setCategories] = useState([]);
@@ -29,6 +64,7 @@ const CategoryOverview = () => {
           // DummyJSON categories are sometimes objects {slug, name, url} or strings
           const name = cat.name || cat; 
           const slug = cat.slug || cat;
+          const Icon = getCategoryIcon(slug);
 
           return (
             <Link 
@@ -37,7 +73,7 @@ const CategoryOverview = () => {
               className="group relative bg-white rounded-lg shadow-sm border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:shadow-md hover:border-indigo-300 transition-all duration-200"
             >
               <div className="h-12 w-12 bg-indigo-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
-                 <Tags className="w-6 h-6 text-indigo-600" />
+                 <Icon className="w-6 h-6 text-indigo-600" />
               </div>
               <h3 className="text-lg font-medium text-gray-900 capitalize group-hover:text-indigo-600">
                 {name}
