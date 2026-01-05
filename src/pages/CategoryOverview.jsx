@@ -21,6 +21,7 @@ const getCategoryIcon = (slug) => {
     'mens-shoes': ShoppingBag,
     'mens-watches': Watch,
     'mobile-accessories': Smartphone,
+    'motorcycle': Bike,
     'motorcycles': Bike,
     'skin-care': Sparkles,
     'smartphones': Smartphone,
