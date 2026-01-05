@@ -94,7 +94,15 @@ const InventoryTable = ({ products, isLoading }) => {
              </div>
              <div className="flex-1 min-w-0">
                <p className="text-sm font-medium text-gray-900 truncate">{product.title}</p>
-               <p className="text-sm text-gray-500 capitalize">{product.category}</p>
+               <div className="flex items-center text-xs text-gray-500 mt-0.5 space-x-2">
+                  <span className="capitalize">{product.category}</span>
+                  {product.brand && (
+                    <>
+                      <span>•</span>
+                      <span className="font-medium text-gray-600">{product.brand}</span>
+                    </>
+                  )}
+               </div>
                <div className="flex items-center mt-1 space-x-2">
                  <span className="text-sm font-bold text-gray-900">${product.price}</span>
                  <StockStatus stock={product.stock} />
