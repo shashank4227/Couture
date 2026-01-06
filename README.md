@@ -3,8 +3,7 @@
 A modern, responsive inventory management web application for store managers. Built with React, Tailwind CSS, and Vite.
 
 ## 🚀 Live Demo
-[Link to deployed app will be here] 
-*(Since I am an AI running locally, I cannot deploy to Vercel/Render directly, but the codebase is ready for deployment).*
+https://couture-three.vercel.app/
 
 ## 🛠️ Tech Stack
 - **Frontend Framework**: React 19 + Vite
