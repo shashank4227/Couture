@@ -48,11 +48,11 @@ const InventoryTable = ({ products, isLoading }) => {
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
-                    <div className="flex-shrink-0 h-10 w-10">
+                    <div className="shrink-0 h-10 w-10">
                       <img className="h-10 w-10 rounded-md object-cover bg-gray-100" src={product.thumbnail} alt="" loading="lazy" />
                     </div>
                     <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900 truncate max-w-[200px]" title={product.title}>{product.title}</div>
+                      <div className="text-sm font-medium text-gray-900 truncate max-w-50" title={product.title}>{product.title}</div>
                       <div className="text-sm text-gray-500">#{product.id}</div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ const InventoryTable = ({ products, isLoading }) => {
             onClick={() => navigate(`/inventory/${product.id}`)}
             className="p-4 flex items-center space-x-4 active:bg-gray-50 cursor-pointer"
           >
-             <div className="flex-shrink-0">
+             <div className="shrink-0">
                <img className="h-16 w-16 rounded-md object-cover bg-gray-100" src={product.thumbnail} alt="" loading="lazy"/>
              </div>
              <div className="flex-1 min-w-0">
