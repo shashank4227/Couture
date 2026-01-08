@@ -17,7 +17,7 @@ const InventoryOverview = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   
   const initialCategory = searchParams.get('category') || '';
-  const initialSort = searchParams.get('sortBy') || '';
+  const initialSort = searchParams.get('sortBy') || 'stock-asc';
   
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
@@ -145,6 +145,8 @@ const InventoryOverview = () => {
             <option value="">Default Sort</option>
             <option value="price-asc">Price: Low to High</option>
             <option value="price-desc">Price: High to Low</option>
+            <option value="stock-desc">Stock: High to Low</option>
+            <option value="stock-asc">Stock: Low to High</option>
             <option value="title-asc">Name: A to Z</option>
             <option value="title-desc">Name: Z to A</option>
           </select>
